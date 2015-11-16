@@ -1,0 +1,27 @@
+﻿<Window x:Class="CommandBar.CommandBarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:CommandBar"
+        mc:Ignorable="d"
+        WindowStyle="None" ResizeMode="NoResize"
+        d:DesignHeight="40" d:DesignWidth="600"
+        Height="40" Width="600">
+    <Grid Margin="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <local:AutoCompleteTextBox x:Name="InputField"
+                                   Grid.Column="0"
+                                   Height="25"
+                                   Watermark="Search here"
+                                   Provider="{Binding}">
+            <local:AutoCompleteTextBox.LoadingContent>
+                <TextBlock Text="Loading..."
+                           Margin="5"
+                           FontSize="14" />
+            </local:AutoCompleteTextBox.LoadingContent>
+        </local:AutoCompleteTextBox>
+    </Grid>
+</Window>
